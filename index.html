@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>축제 한눈에</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <div class="brand-mark" aria-hidden="true">F</div>
+      <div>
+        <p class="eyebrow">KOREA FESTIVAL FINDER</p>
+        <h1>이번 계절, 어디로<br><em>떠나볼까요?</em></h1>
+        <p class="lede">지역과 기간을 고르면 가까운 축제를 한눈에 찾아드려요.</p>
+      </div>
+      <div class="season-stamp" aria-label="현재 계절 장식">09<br><span>SEP</span></div>
+    </header>
+
+    <section class="search-panel" aria-labelledby="search-title">
+      <div class="panel-heading"><span id="search-title">축제 검색</span><span class="api-note">행사·공연·축제 정보</span></div>
+      <form id="search-form">
+        <label>지역<select id="region"><option value="">전체 지역</option><option value="11">서울특별시</option><option value="26">부산광역시</option><option value="27">대구광역시</option><option value="28">인천광역시</option><option value="41">경기도</option><option value="50">제주특별자치도</option></select></label>
+        <label>시작일<input id="start-date" type="date" required /></label>
+        <label>종료일<input id="end-date" type="date" /></label>
+        <label class="keyword-field">키워드<input id="keyword" type="search" placeholder="예: 불꽃, 음악, 전통" /></label>
+        <button type="submit">축제 찾기</button>
+      </form>
+      <p class="helper">시작일은 필수예요. 키워드는 축제명과 주소에서 함께 찾아요.</p>
+    </section>
+
+    <section class="results-section" aria-live="polite">
+      <div class="results-head"><div><p class="eyebrow">DISCOVER</p><h2 id="results-title">추천 축제</h2></div><span id="result-count" class="result-count"></span></div>
+      <div id="status" class="status">검색 조건을 고르고 축제를 찾아보세요.</div>
+      <div id="results" class="cards"></div>
+    </section>
+    <footer>데이터 출처: 한국관광공사 국문 관광정보 서비스 · 검색 결과는 제공 데이터에 따라 달라질 수 있습니다.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
